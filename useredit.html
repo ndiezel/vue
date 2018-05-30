@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <!--<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">-->
+
+        <title>User edit</title>
+        <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css" />
+        <style>
+            [v-cloak] { display:none; }
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <user-info></user-info>
+        </div>
+
+        <div id="user-info" v-cloak="true">
+            <div>
+                Инфо о пользователе
+            </div>
+        </div>
+        <script src="https://unpkg.com/vue/dist/vue.js"></script>
+        <script>
+var app = new Vue({
+    el: "#app",
+    components: {
+        'user-info': {
+            template: "#user-info"
+        }
+    },
+    data: function () {
+        return{
+            //
+        };
+    }
+});
+        </script>
+    </body>
+</html>

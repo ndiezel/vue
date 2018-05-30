@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <!--<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">-->
+
+        <title>User list</title>
+        <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css" />
+        <style>
+            [v-cloak] { display:none; }
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <user-list v-bind:users="list"></user-list>
+        </div>
+
+        <div id="user-list" v-cloak="true">
+            <div>
+                <div v-for="item in users" v-bind:key="item.name">
+                    {{item.name}}
+                </div>
+            </div>
+        </div>
+        <script src="https://unpkg.com/vue/dist/vue.js"></script>
+        <script>
+var app = new Vue({
+    el: "#app",
+    components: {
+        'user-list': {
+            template: "#user-list",
+            props: {
+                users: {
+                    type: Array,
+                    required: true
+                }
+            }
+        }
+    },
+    data: function () {
+        return{
+            list: [{name: 'Саня'}, {name: 'Вася'}, {name: 'Петя'}, {name: 'Федя'}, {name: 'Боря'}]
+        };
+    }
+});
+        </script>
+    </body>
+</html>
